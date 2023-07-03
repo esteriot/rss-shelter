@@ -59,7 +59,7 @@ function pages() {
   return src('src/pages/*.html')
     .pipe(
       include({
-        includePaths: 'src/components',
+        includePaths: 'src/pages/components',
       })
     )
     .pipe(dest('src'))
@@ -71,7 +71,7 @@ function styles() {
     src(['src/scss/style.scss'])
       // .pipe(
       //   autoprefixer({
-      //     overrideBrowserslist: ['last 10 versions'],
+      //     overrideBrowserslist: ['last 5 versions'],
       //   })
       // )
       .pipe(concat('style.min.css'))
@@ -97,11 +97,11 @@ function watching() {
       index: 'main.html',
     },
   });
-  watch(['src/scss/style.scss'], styles);
+  watch(['src/scss/**/*.scss'], styles);
   watch(['src/img/src'], images);
   watch(['src/*.html']).on('change', browserSync.reload);
   watch(['src/js/index.js'], scripts);
-  watch(['src/components/*', 'src/pages/*'], pages);
+  watch(['src/pages/components/*', 'src/pages/*'], pages);
 }
 
 function cleanDist() {

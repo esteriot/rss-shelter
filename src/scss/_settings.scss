@@ -1,0 +1,56 @@
+/* stylelint-disable media-feature-range-notation */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--primary-font);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 40px;
+  max-width: 1280px;
+
+  @media (max-width: 900px) {
+    padding: 0 30px;
+  }
+
+  @media (max-width: 380px) {
+    padding: 0 20px;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-container {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}

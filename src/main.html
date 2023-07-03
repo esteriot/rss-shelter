@@ -5,14 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
-    <!-- <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon"> -->
-    <!-- <link rel="stylesheet" href="../../assets/styles/normalize.css"> -->
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.min.css">
   </head>
   <body>
-    <h1> Header component text </h1>
-    <h2>Main page text</h2>
-    
+    <div class="site-container">
+      <header class="header">
+        <div class="container header__container">
+          <div class="logo">
+            <a class="logo__title" href="#">Cozy House</a>
+            <span class="logo__subtitle">Shelter for pets in Boston</span>
+          </div>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="nav__link nav__link--active" href="#">About the shelter</a>
+              </li>
+              <li class="nav__item"><a class="nav__link" href="../pets/index.html">Our pets</a></li>
+              <li class="nav__item"><a class="nav__link" href="#help">Help the shelter</a></li>
+              <li class="nav__item"><a class="nav__link" href="#contacts">Contacts</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+      <main class="main">
+        <section class="not-only">
+          <div class="container not-only__container">
+            <div class="not-only__description">
+              <h1 class="not-only__heading"> Not only people <br> need a house </h1>
+              <p class="not-only__text">We offer to give a chance to a little and nice puppy with an extremely <br> wide and
+                open heart. He or she will love you more than anybody else <br> in the world, you will see! </p>
+              <button class="button not-only__button" href="#friends">Make a friend</button>
+            </div>
+            <picture class="not-only__image">
+              <source media="(max-width: 320px)" srcset="../../img/start-screen-puppy-small.avif" type="image/avif">
+              <source media="(max-width: 320px)" srcset="../../img/start-screen-puppy-small.webp" type="image/webp">
+              <source media="(max-width: 320px)" srcset="../../img/start-screen-puppy-small.png">
+              <source media="(max-width: 768px)" srcset="../../img/start-screen-puppy-medium.avif" type="image/avif">
+              <source media="(max-width: 768px)" srcset="../../img/start-screen-puppy-medium.webp" type="image/webp">
+              <source media="(max-width: 768px)" srcset="../../img/start-screen-puppy-medium.png">
+              <source media="(min-width: 769px)" srcset="../../img/start-screen-puppy.avif" type="image/avif">
+              <source media="(min-width: 769px)" srcset="../../img/start-screen-puppy.webp" type="image/webp">
+              <source media="(min-width: 769px)" srcset="../../img/start-screen-puppy.png">
+              <img alt="puppy">
+            </picture>
+          </div>
+        </section>
+        
+      </main>
+      
+    </div>
     <script src="js/index.min.js"></script>
   </body>
 </html>
