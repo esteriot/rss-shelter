@@ -1,14 +1,14 @@
 /* stylelint-disable media-feature-range-notation */
-.header {
-  padding-bottom: 89px;
 
+.header {
   &__container {
     display: flex;
     justify-content: space-between;
-  }
+    margin-bottom: 88px;
 
-  @media (max-width: 900px) {
-    padding-bottom: 58px;
+    @media (max-width: 900px) {
+      margin-bottom: 58px;
+    }
   }
 }
 

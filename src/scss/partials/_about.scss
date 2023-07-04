@@ -1,0 +1,79 @@
+/* stylelint-disable media-feature-range-notation */
+
+.about {
+  display: flex;
+  background-color: var(--color-white);
+
+  &__container {
+    display: flex;
+    column-gap: 120px;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      row-gap: 80px;
+    }
+
+    @media (max-width: 380px) {
+      margin-top: 41px;
+      row-gap: 40px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    padding-top: 14px;
+    max-width: 430px;
+    row-gap: 25px;
+
+    @media (max-width: 900px) {
+      order: 1;
+      padding-top: 0;
+    }
+
+    @media (max-width: 380px) {
+      padding: 0 5px;
+    }
+  }
+
+  &__heading {
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 2.1px;
+    color: var(--color-dark-1);
+
+    @media (max-width: 380px) {
+      font-size: 25px;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-family: var(--secondary-font);
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--color-dark-2);
+
+    @media (max-width: 380px) {
+      text-align: justify;
+    }
+  }
+
+  &__text--last {
+    @media (max-width: 380px) {
+      margin-top: -3px;
+    }
+  }
+
+  &__pets-image {
+    @media (max-width: 900px) {
+      align-self: center;
+      order: 2;
+    }
+  }
+}

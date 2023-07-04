@@ -1,8 +1,6 @@
 /* stylelint-disable media-feature-range-notation */
 
 .not-only {
-  margin-bottom: -5px;
-
   &__container {
     display: flex;
     column-gap: 43px;
@@ -84,14 +82,10 @@
   }
 
   &__image {
-    max-width: 100%;
+    display: inline-flex;
 
     @media (max-width: 768px) {
       align-self: flex-end;
-    }
-
-    @media (max-width: 380px) {
-      padding: 0 20px;
     }
   }
 }
