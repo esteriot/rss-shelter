@@ -38,16 +38,26 @@
               <button class="button not-only__button" href="#friends">Make a friend</button>
             </div>
             <picture class="not-only__image">
-              <source media="(max-width: 320px)" srcset="../../img/start-screen-puppy-small.avif" type="image/avif">
-              <source media="(max-width: 320px)" srcset="../../img/start-screen-puppy-small.webp" type="image/webp">
-              <source media="(max-width: 320px)" srcset="../../img/start-screen-puppy-small.png">
-              <source media="(max-width: 768px)" srcset="../../img/start-screen-puppy-medium.avif 1x, ../../img/start-screen-puppy-medium-2x.avif 2x" type="image/avif">
-              <source media="(max-width: 768px)" srcset="../../img/start-screen-puppy-medium.webp" type="image/webp">
-              <source media="(max-width: 768px)" srcset="../../img/start-screen-puppy-medium.png">
-              <source media="(min-width: 769px)" srcset="../../img/start-screen-puppy.avif 1x, ../../img/start-screen-puppy-2x.avif" type="image/avif">
-              <source media="(min-width: 769px)" srcset="../../img/start-screen-puppy.webp" type="image/webp">
-              <source media="(min-width: 769px)" srcset="../../img/start-screen-puppy.png">
-              <img alt="puppy">
+              <source media="(max-width: 320px)"
+                srcset="../../img/start-screen-puppy-small.avif 1x, ../../img/start-screen-puppy-small-2x.avif 2x"
+                type="image/avif">
+              <source media="(max-width: 320px)"
+                srcset="../../img/start-screen-puppy-small.webp 1x, ../../img/start-screen-puppy-small-2x.webp 2x"
+                type="image/webp">
+              <source media="(max-width: 320px)"
+                srcset="../../img/start-screen-puppy-small.png 1x, ../../img/start-screen-puppy-small-2x.png 2x">
+              <source media="(max-width: 768px)"
+                srcset="../../img/start-screen-puppy-medium.avif 1x, ../../img/start-screen-puppy-medium-2x.avif 2x"
+                type="image/avif">
+              <source media="(max-width: 768px)"
+                srcset="../../img/start-screen-puppy-medium.webp 1x, ../../img/start-screen-puppy-medium-2x.webp 2x"
+                type="image/webp">
+              <source media="(max-width: 768px)"
+                srcset="../../img/start-screen-puppy-medium.png 1x, ../../img/start-screen-puppy-medium-2x.png 2x">
+              <source srcset="../../img/start-screen-puppy.avif, ../../img/start-screen-puppy-2x.avif 2x" type="image/avif">
+              <source srcset="../../img/start-screen-puppy.webp, ../../img/start-screen-puppy-2x.webp 2x" type="image/webp">
+              <img src="../../img/start-screen-puppy.png" srcset="../../img/start-screen-puppy-2x.png 2x"
+                width="698" height="728" alt="puppy">
             </picture>
           </div>
         </section>
@@ -55,13 +65,16 @@
         <section class="about">
           <div class="container about__container">
             <picture class="about__pets-image">
-              <source media="(max-width: 320px)" srcset="../../img/about-pets-small.avif" type="image/avif">
-              <source media="(max-width: 320px)" srcset="../../img/about-pets-small.webp" type="image/webp">
-              <source media="(max-width: 320px)" srcset="../../img/about-pets-small.png">
-              <source media="(min-width: 321px)" srcset="../../img/about-pets.avif" type="image/avif">
-              <source media="(min-width: 321px)" srcset="../../img/about-pets.webp" type="image/webp">
-              <source media="(min-width: 321px)" srcset="../../img/about-pets.png">
-              <img alt="pets">
+              <source media="(max-width: 320px)"
+                srcset="../../img/about-pets-small.avif 1x, ../../img/about-pets-small-2x.avif 2x" type="image/avif">
+              <source media="(max-width: 320px)"
+                srcset="../../img/about-pets-small.webp 1x, ../../img/about-pets-small-2x.webp 2x" type="image/webp">
+              <source media="(max-width: 320px)"
+                srcset="../../img/about-pets-small.png 1x, ../../img/about-pets-small-2x.png 2x">
+              <source srcset="../../img/about-pets.avif, ../../img/about-pets-2x.avif 2x" type="image/avif">
+              <source srcset="../../img/about-pets.webp, ../../img/about-pets-2x.webp 2x" type="image/webp">
+              <img loading="lazy" src="../../img/about-pets.png" srcset="../../img/about-pets-2x.png 2x" alt="pets" width="300"
+                height="408">
             </picture>
             <div class="about__description">
               <h2 class="about__heading">About the shelter <br> “Cozy House”</h2>
@@ -73,6 +86,42 @@
                 of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals,
                 they become attached to the pets and would hardly ever leave them alone.</p>
             </div>
+          </div>
+        </section>
+        
+        <section class="friends">
+          <div class="container friends__container">
+            <h2 class="friends__heading">Our friends who <br> are looking for a house</h2>
+            <div class="cards">
+              <button class="cards__nav cards__nav--prev">
+                <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929" />
+                </svg>
+              </button>
+              <div class="cards__container">
+                <!-- <div class="cards__item">
+                  <img src="../../img/pets-katrine.avif" alt="pet photo" class="cards__img">
+                  <span class="cards__name">Katrine</span>
+                  <button class="button cards__button">Learn more</button>
+                </div>
+                <div class="cards__item">
+                  <img src="../../img/pets-jennifer.avif" alt="pet photo" class="cards__img">
+                  <span class="cards__name">Jennifer</span>
+                  <button class="button cards__button">Learn more</button>
+                </div>
+                <div class="cards__item">
+                  <img src="../../img/pets-woody.avif" alt="pet photo" class="cards__img">
+                  <span class="cards__name">Woody</span>
+                  <button class="button cards__button">Learn more</button>
+                </div> -->
+              </div>
+              <button class="cards__nav cards__nav--next"><svg width="14" height="6" viewBox="0 0 14 6" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929" />
+                </svg>
+              </button>
+            </div>
+            <a class="button friends__button" href="../pets/index.html">Get to know the rest</a>
           </div>
         </section>
         

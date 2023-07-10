@@ -1,13 +1,16 @@
 <section class="about">
   <div class="container about__container">
     <picture class="about__pets-image">
-      <source media="(max-width: 320px)" srcset="../../img/about-pets-small.avif" type="image/avif">
-      <source media="(max-width: 320px)" srcset="../../img/about-pets-small.webp" type="image/webp">
-      <source media="(max-width: 320px)" srcset="../../img/about-pets-small.png">
-      <source media="(min-width: 321px)" srcset="../../img/about-pets.avif" type="image/avif">
-      <source media="(min-width: 321px)" srcset="../../img/about-pets.webp" type="image/webp">
-      <source media="(min-width: 321px)" srcset="../../img/about-pets.png">
-      <img alt="pets">
+      <source media="(max-width: 320px)"
+        srcset="../../img/about-pets-small.avif 1x, ../../img/about-pets-small-2x.avif 2x" type="image/avif">
+      <source media="(max-width: 320px)"
+        srcset="../../img/about-pets-small.webp 1x, ../../img/about-pets-small-2x.webp 2x" type="image/webp">
+      <source media="(max-width: 320px)"
+        srcset="../../img/about-pets-small.png 1x, ../../img/about-pets-small-2x.png 2x">
+      <source srcset="../../img/about-pets.avif, ../../img/about-pets-2x.avif 2x" type="image/avif">
+      <source srcset="../../img/about-pets.webp, ../../img/about-pets-2x.webp 2x" type="image/webp">
+      <img loading="lazy" src="../../img/about-pets.png" srcset="../../img/about-pets-2x.png 2x" alt="pets" width="300"
+        height="408">
     </picture>
     <div class="about__description">
       <h2 class="about__heading">About the shelter <br> “Cozy House”</h2>
