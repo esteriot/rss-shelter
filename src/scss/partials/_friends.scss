@@ -4,17 +4,17 @@
   &__container {
     display: flex;
     flex-direction: column;
+    padding-top: 80px;
     padding-bottom: 100px;
     row-gap: 60px;
 
-    @media (width <= 430px) {
-      padding: 0 10px 41px;
+    @media (width <= 460px) {
+      padding: 43px 10px 41px;
       row-gap: 41px;
     }
   }
 
   &__heading {
-    padding-top: 80px;
     font-weight: 400;
     font-size: 35px;
     line-height: 130%;
@@ -22,8 +22,7 @@
     text-align: center;
     color: var(--color-dark-1);
 
-    @media (width <= 430px) {
-      padding-top: 42px;
+    @media (width <= 460px) {
       font-size: 25px;
       letter-spacing: 1.5px;
       text-align: center;
@@ -34,10 +33,12 @@
     align-self: center;
     transition: background-color 0.7s;
 
-    &:hover {
-      background-color: var(--color-primary-light);
-      transition: background-color 0.7s;
-      cursor: pointer;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--color-primary-light);
+        transition: background-color 0.7s;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -49,18 +50,26 @@
   justify-content: space-evenly;
 
   &__container {
+    overflow: hidden;
+    width: 100%;
+
+    @media (width <= 460px) {
+      padding-bottom: 22px;
+    }
+  }
+
+  &__list {
     display: flex;
     column-gap: 90px;
     align-items: center;
     justify-content: center;
-    width: 100%;
     min-height: 433px;
 
     @media (width <= 1240px) {
       column-gap: 40px;
     }
 
-    @media (width <= 430px) {
+    @media (width <= 460px) {
       width: 100%;
     }
   }
@@ -70,29 +79,35 @@
     flex-direction: column;
     align-items: center;
     border-radius: 9px;
-    min-width: 270px;
+    max-width: 270px;
     background-color: var(--color-light);
     row-gap: 30px;
 
-    &:not(:hover) {
-      transition: background-color 1s;
-    }
+    @media (hover: hover) and (pointer: fine) {
+      &:not(:hover) {
+        transition: background-color 1s;
+      }
 
-    &:not(:hover) > .cards__button {
-      transition: background-color 1s;
-    }
+      &:not(:hover) > .cards__button {
+        transition: background-color 1s;
+      }
 
-    &:hover > .cards__button {
-      background-color: var(--color-primary-light);
-      transition: background-color 1s;
-      cursor: pointer;
-    }
+      &:hover > .cards__button {
+        background-color: var(--color-primary-light);
+        transition: background-color 1s;
+        cursor: pointer;
+      }
 
-    &:hover {
-      background-color: var(--color-white);
-      transition: background-color 1s;
-      cursor: pointer;
+      &:hover {
+        background-color: var(--color-white);
+        transition: background-color 1s;
+        cursor: pointer;
+      }
     }
+  }
+
+  &__img {
+    display: inline-flex;
   }
 
   &__name {
@@ -110,41 +125,110 @@
   }
 
   &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid var(--color-primary);
     border-radius: 50%;
     min-width: 52px;
     min-height: 52px;
     background-color: var(--color-background);
-    cursor: pointer;
-  }
-
-  &__nav--prev,
-  &__nav--next {
     transition: background-color 0.7s;
+    cursor: pointer;
 
-    &:hover {
-      border-color: var(--color-primary-light);
-      background-color: var(--color-primary-light);
-      transition: background-color 0.7s;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: var(--color-primary-light);
+        background-color: var(--color-primary-light);
+        transition: background-color 0.7s;
+      }
     }
   }
 
-  @media (width <= 1200px) {
+  @media (width <= 1240px) {
+    column-gap: 20px;
+  }
+
+  @media (width <= 830px) {
     column-gap: 10px;
   }
 
-  @media (width <= 430px) {
+  @media (width <= 460px) {
     column-gap: 20px;
     flex-wrap: wrap;
 
     &__nav--prev {
       order: 1;
-      margin-top: 1.5rem;
     }
 
     &__nav--next {
       order: 2;
-      margin-top: 1.5rem;
     }
+  }
+}
+
+.nextSlide {
+  animation: right-shift 0.4s linear forwards;
+
+  @media (width < 1000px) {
+    animation: right-shift 0.3s linear forwards;
+  }
+
+  @media (width <= 720px) {
+    animation: right-shift 0.2s linear forwards;
+  }
+}
+
+.prevSlide {
+  animation: left-shift 0.4s linear forwards;
+
+  @media (width < 1000px) {
+    animation: left-shift 0.3s linear forwards;
+  }
+
+  @media (width <= 720px) {
+    animation: left-shift 0.2s linear forwards;
+  }
+}
+
+.scale {
+  animation: scale 0.4s linear forwards;
+
+  @media (width < 1000px) {
+    animation: scale 0.3s linear forwards;
+  }
+
+  @media (width <= 720px) {
+    animation: scale 0.2s linear forwards;
+  }
+}
+
+@keyframes right-shift {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes left-shift {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scale {
+  0% {
+    scale: 0;
+  }
+
+  100% {
+    scale: 1;
   }
 }
