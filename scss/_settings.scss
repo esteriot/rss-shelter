@@ -1,0 +1,59 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-family: var(--primary-font);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 40px;
+  max-width: 1280px;
+
+  @media (width <= 900px) {
+    padding: 0 30px;
+  }
+
+  @media (width <= 380px) {
+    padding: 0 20px;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0 auto;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    url("/img/pattern.png"),
+    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),
+    #211f20;
+}
+
+.main {
+  flex-grow: 1;
+}
