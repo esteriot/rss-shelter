@@ -2,10 +2,10 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 88px;
+    padding-bottom: 88px;
 
     @media (width <= 900px) {
-      margin-bottom: 58px;
+      padding-bottom: 58px;
     }
   }
 }
