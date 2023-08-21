@@ -1,11 +1,9 @@
-/* eslint-disable no-plusplus */
-// import '../scss/slider.scss';
 import pets from './pets';
-
+import createModal from './modal';
 import createCard from './card';
 
-let carouselTimeout;
 let cardsQuantity;
+let resizedCardsQuantity;
 let prevClick;
 let displayedPets = [];
 let prevState = [];
@@ -17,13 +15,10 @@ const nextBtn = document.querySelector('.cards__nav--next');
 function calculateCardsQuantity() {
   if (window.innerWidth <= 720) {
     cardsQuantity = 1;
-    carouselTimeout = 200;
   } else if (window.innerWidth < 1000) {
     cardsQuantity = 2;
-    carouselTimeout = 300;
   } else {
     cardsQuantity = 3;
-    carouselTimeout = 400;
   }
 }
 
@@ -39,13 +34,15 @@ function generatePetCards() {
 
 function showPetCards() {
   cardsList.innerHTML = '';
-  for (let i = 0; i < cardsQuantity; i++) {
+  for (let i = 0; i < cardsQuantity; i += 1) {
     if (!displayedPets[i]) {
       break;
     }
     const li = createCard(displayedPets[i]);
     cardsList.appendChild(li);
-    // createModal(li);
+    li.addEventListener('click', () => {
+      createModal(li);
+    });
   }
 }
 
@@ -66,16 +63,13 @@ function handleCarouselClicks(btn, prevClickedBtn, slide) {
   prevClick = btn;
 
   cardsList.classList.add(slide);
-  setTimeout(() => {
+
+  cardsList.addEventListener('animationend', () => {
     cardsList.classList.remove(slide);
-    cardsList.classList.add('scale');
     showPetCards();
-    setTimeout(() => {
-      cardsList.classList.remove('scale');
-      btn.removeAttribute('disabled');
-      btn.removeAttribute('style');
-    }, carouselTimeout);
-  }, carouselTimeout);
+    btn.removeAttribute('disabled');
+    btn.removeAttribute('style');
+  });
 }
 
 prevBtn.addEventListener('click', () =>
@@ -86,10 +80,21 @@ nextBtn.addEventListener('click', () => {
   handleCarouselClicks(nextBtn, prevBtn, 'nextSlide');
 });
 
-function slider() {
+export default function createSlider() {
   calculateCardsQuantity();
   generatePetCards();
   showPetCards();
 }
 
-export default slider;
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 720) {
+    resizedCardsQuantity = 1;
+  } else if (window.innerWidth < 1000) {
+    resizedCardsQuantity = 2;
+  } else {
+    resizedCardsQuantity = 3;
+  }
+  if (cardsQuantity !== resizedCardsQuantity) {
+    createSlider();
+  }
+});

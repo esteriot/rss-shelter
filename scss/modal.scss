@@ -1,0 +1,146 @@
+.pet-card {
+  display: flex;
+  column-gap: 29px;
+  border-radius: 9px;
+  width: 900px;
+  height: 500px;
+  background-color: var(--color-white);
+
+  &__img {
+    border-bottom-left-radius: 9px;
+
+    @media (width <= 380px) {
+      display: none;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-right: 20px;
+
+    @media (width <= 1000px) {
+      padding-top: 10px;
+      padding-right: 9px;
+    }
+
+    @media (width <= 730px) {
+      padding: 10px;
+    }
+  }
+
+  &__heading {
+    padding-bottom: 10px;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 2.1px;
+  }
+
+  &__animal {
+    padding-bottom: 40px;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 1.2px;
+
+    @media (width <= 1000px) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__about {
+    padding-bottom: 40px;
+    font-size: 15px;
+    line-height: 114%;
+    letter-spacing: 0.9px;
+
+    @media (width <= 1000px) {
+      padding-bottom: 20px;
+      font-size: 13px;
+      line-height: 110%;
+      letter-spacing: 0.78px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.9px;
+    row-gap: 11px;
+
+    li::before {
+      content: "•";
+      padding-right: 7px;
+      color: var(--color-primary);
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 110%;
+      letter-spacing: 0.9px;
+    }
+
+    @media (width <= 1000px) {
+      line-height: 113%;
+      row-gap: 5px;
+    }
+  }
+
+  @media (width <= 1000px) {
+    column-gap: 10px;
+    width: 630px;
+    height: 350px;
+  }
+
+  @media (width <= 730px) {
+    flex-direction: column;
+    height: auto;
+    max-width: 270px;
+  }
+
+  @media (width <= 380px) {
+    max-width: 220px;
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0 0 0 / 50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s;
+
+  &__active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.modal__container {
+  position: relative;
+  background-color: transparent;
+}
+
+.modal__close {
+  position: absolute;
+  right: -40px;
+  top: -52px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

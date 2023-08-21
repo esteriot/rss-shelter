@@ -1,14 +1,8 @@
 /* eslint-disable no-unused-vars */
-import slider from './js/slider';
-import * as burger from './js/burger';
-
-let resizeTimeout;
-
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(slider, 50);
-});
+import createSlider from './js/slider';
+import createBurger from './js/burger';
 
 document.addEventListener('DOMContentLoaded', () => {
-  slider();
+  createSlider();
+  createBurger();
 });

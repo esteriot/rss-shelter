@@ -1,2 +1,6 @@
 /* eslint-disable no-unused-vars */
-import * as burger from './js/burger';
+import createBurger from './js/burger';
+
+document.addEventListener('DOMContentLoaded', () => {
+  createBurger();
+});

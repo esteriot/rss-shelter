@@ -168,67 +168,53 @@
 }
 
 .nextSlide {
-  animation: right-shift 0.4s linear forwards;
+  animation: right-shift 0.5s linear forwards;
 
   @media (width < 1000px) {
-    animation: right-shift 0.3s linear forwards;
+    animation: right-shift 0.4s linear forwards;
   }
 
   @media (width <= 720px) {
-    animation: right-shift 0.2s linear forwards;
+    animation: right-shift 0.3s linear forwards;
   }
 }
 
 .prevSlide {
-  animation: left-shift 0.4s linear forwards;
+  animation: left-shift 0.5s linear forwards;
 
   @media (width < 1000px) {
+    animation: left-shift 0.4s linear forwards;
+  }
+
+  @media (width <= 720px) {
     animation: left-shift 0.3s linear forwards;
-  }
-
-  @media (width <= 720px) {
-    animation: left-shift 0.2s linear forwards;
-  }
-}
-
-.scale {
-  animation: scale 0.4s linear forwards;
-
-  @media (width < 1000px) {
-    animation: scale 0.3s linear forwards;
-  }
-
-  @media (width <= 720px) {
-    animation: scale 0.2s linear forwards;
   }
 }
 
 @keyframes right-shift {
   0% {
-    transform: translateX(0%);
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(360deg) scale(0);
   }
 
   100% {
-    transform: translateX(100%);
+    transform: translateX(100%) scale(1);
   }
 }
 
 @keyframes left-shift {
   0% {
-    transform: translateX(0%);
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(-360deg) scale(0);
   }
 
   100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scale {
-  0% {
-    scale: 0;
-  }
-
-  100% {
-    scale: 1;
+    transform: translateX(100%) scale(1);
   }
 }
