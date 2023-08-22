@@ -1,0 +1,87 @@
+.help {
+  background-color: var(--color-white);
+
+  .heading {
+    margin-bottom: 60px;
+    text-align: center;
+
+    @media (width <= 530px) {
+      margin-bottom: 40px;
+      font-size: 25px;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  &__container {
+    padding-top: 80px;
+    padding-bottom: 100px;
+
+    @media (width <= 530px) {
+      padding-top: 44px;
+      padding-bottom: 42px;
+    }
+
+    @media (width <= 380px) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 120px;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 55px;
+
+    @media (width < 1110px) {
+      column-gap: 60px;
+      row-gap: 55px;
+    }
+
+    @media (width <= 430px) {
+      column-gap: 30px;
+      justify-content: center;
+      row-gap: 30px;
+    }
+
+    @media (width <= 320px) {
+      justify-content: start;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    row-gap: 30px;
+
+    @media (width <= 1060px) {
+      width: 170px;
+    }
+
+    @media (width <= 530px) {
+      width: 130px;
+      row-gap: 20px;
+    }
+  }
+
+  &__img {
+    @media (width <= 530px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 1.2px;
+    color: var(--color-dark-1);
+
+    @media (width <= 530px) {
+      font-size: 15px;
+    }
+  }
+}

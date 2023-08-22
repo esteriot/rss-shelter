@@ -1,6 +1,4 @@
-import '../scss/card.scss';
-
-const buttonText = 'More info';
+const buttonText = 'Learn more';
 
 function createCard(pet) {
   const card = document.createElement('li');
@@ -8,7 +6,7 @@ function createCard(pet) {
   card.id = pet.name;
 
   const pic = document.createElement('img');
-  pic.classList.add('slider__img');
+  pic.classList.add('cards__img');
   pic.src = pet.img;
   pic.width = 270;
   pic.height = 270;
@@ -17,7 +15,7 @@ function createCard(pet) {
   card.appendChild(pic);
 
   const name = document.createElement('span');
-  name.classList.add('slider__name');
+  name.classList.add('cards__name');
   name.textContent = pet.name;
   card.appendChild(name);
 
