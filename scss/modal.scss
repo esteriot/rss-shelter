@@ -1,13 +1,27 @@
 .pet-card {
   display: flex;
   column-gap: 29px;
+  align-items: normal;
   border-radius: 9px;
   width: 900px;
   height: 500px;
   background-color: var(--color-white);
 
+  @media (height <= 720px) and (orientation: landscape) {
+    height: auto;
+  }
+
+  @media (width <= 1000px) and (orientation: landscape) {
+    height: auto;
+  }
+
   &__img {
+    flex-shrink: 0;
     border-bottom-left-radius: 9px;
+
+    @media (height < 720px) and (width < 730px) {
+      display: none;
+    }
 
     @media (width <= 380px) {
       display: none;
@@ -28,6 +42,10 @@
     @media (width <= 730px) {
       padding: 10px;
     }
+
+    @media (height <= 720px) and (orientation: landscape) {
+      padding-top: 0;
+    }
   }
 
   &__heading {
@@ -47,6 +65,10 @@
     @media (width <= 1000px) {
       padding-bottom: 20px;
     }
+
+    @media (height <= 720px) and (orientation: landscape) {
+      padding-bottom: 10px;
+    }
   }
 
   &__about {
@@ -60,6 +82,10 @@
       font-size: 13px;
       line-height: 110%;
       letter-spacing: 0.78px;
+    }
+
+    @media (height <= 7200px) and (orientation: landscape) {
+      padding-bottom: 10px;
     }
   }
 
@@ -96,6 +122,10 @@
     width: 630px;
     height: 350px;
   }
+
+   @media (width <= 1000px) and (orientation: landscape) {
+    height: auto;
+   }
 
   @media (width <= 730px) {
     flex-direction: column;

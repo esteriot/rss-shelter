@@ -84,6 +84,7 @@
 
     &--active {
       color: var(--color-light);
+      cursor: default;
     }
 
     &--active::after {
@@ -95,10 +96,6 @@
 
     @media (width <= 767px) {
       font-size: 32px;
-    }
-
-    @media (height <= 530px) {
-      font-size: 24px;
     }
   }
 

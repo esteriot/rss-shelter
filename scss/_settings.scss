@@ -82,3 +82,15 @@ a {
   overflow: hidden;
   height: 100vh;
 }
+
+@-moz-document url-prefix() {
+  .menu__link,
+  .not-only__text,
+  .about__text {
+    word-spacing: 1px;
+  }
+
+  .donation__text {
+    word-spacing: -1px;
+  }
+}

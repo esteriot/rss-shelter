@@ -2,6 +2,7 @@
   &__container {
     display: flex;
     column-gap: 43px;
+    justify-content: space-between;
 
     @media (width <= 900px) {
       flex-direction: column;
@@ -50,12 +51,12 @@
   &__description {
     display: flex;
     flex-direction: column;
-    padding-top: 163px;
+    margin-top: 163px;
     gap: 42px;
 
     @media (width <= 1060px) {
       justify-content: center;
-      padding-top: 0;
+      margin-top: 0;
     }
   }
 

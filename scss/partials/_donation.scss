@@ -69,6 +69,7 @@
     color: var(--color-dark-1);
     background-color: var(--color-primary);
     transition: background-color 0.7s;
+    cursor: pointer;
     gap: 15px;
 
     &:hover {
