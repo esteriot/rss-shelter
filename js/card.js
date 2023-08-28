@@ -5,13 +5,19 @@ function createCard(pet) {
   card.classList.add('cards__item');
   card.id = pet.name;
 
-  const pic = document.createElement('img');
+  const pic = document.createElement('picture');
   pic.classList.add('cards__img');
-  pic.src = pet.img;
-  pic.width = 270;
-  pic.height = 270;
-  pic.alt = `${pet.name}'s photo`;
-  pic.setAttribute('loading', 'lazy');
+  const source1 = document.createElement('source');
+  source1.srcset = pet.img[1];
+  source1.type = 'image/webp';
+  pic.appendChild(source1);
+  const source2 = document.createElement('img');
+  source2.src = pet.img[0];
+  source2.width = 270;
+  source2.height = 270;
+  source2.alt = `${pet.name}'s photo`;
+  source2.setAttribute('loading', 'lazy');
+  pic.appendChild(source2);
   card.appendChild(pic);
 
   const name = document.createElement('span');

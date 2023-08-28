@@ -1,6 +1,6 @@
 import pets from './pets';
-import createModal from './modal';
 import createCard from './card';
+import createModal from './modal';
 
 let cardsQuantity;
 let resizedCardsQuantity;

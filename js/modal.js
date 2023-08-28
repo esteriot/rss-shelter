@@ -12,7 +12,7 @@ export default function createModal(card) {
   const div = document.createElement('div');
   const img = document.createElement('img');
   img.classList.add('pet-card__img');
-  img.src = pet.img;
+  img.src = pet.img[0];
   div.appendChild(img);
   const description = document.createElement('div');
   description.classList.add('pet-card__description');
